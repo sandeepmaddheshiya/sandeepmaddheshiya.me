@@ -1,0 +1,39 @@
+---
+title: "Testing TTFB Impact of Cloudflare Edge Caching"
+slug: "edge-cache-ttfb"
+date: "2026-10-04"
+project: "visareadynow"
+tags:
+  - infra
+  - performance
+  - nextjs
+hypothesis: "Caching static HTML responses at the edge will reduce global TTFB from ~650ms to under 120ms without stale data issues."
+change: "Configured Cache-Control headers with s-maxage=86400 and stale-while-revalidate for static project and guide pages."
+expected: "TTFB drop to < 150ms across global test locations."
+actual: "Average TTFB dropped to 85ms in US and 110ms in EU. Zero cache invalidation issues observed."
+conclusion: "Edge caching eliminated server compute overhead on repeated requests, reducing TTFB by over 80%."
+outcome: "worked"
+data:
+  - label: "US TTFB"
+    before: 640
+    after: 85
+    unit: "ms"
+  - label: "EU TTFB"
+    before: 710
+    after: 110
+    unit: "ms"
+---
+
+## Context & Setup
+
+When serving content pages from an origin server, network latency to international visitors often dominated response time. By pushing response caching to edge nodes, pages are delivered directly from the visitor's nearest point of presence.
+
+```typescript
+// Header configuration applied to edge handlers
+export const revalidate = 86400 // 24 hours
+```
+
+## Key Findings
+
+1. Origin server load decreased by 92% during synthetic traffic tests.
+2. First Contentful Paint (FCP) improved in direct correlation with the TTFB decrease.

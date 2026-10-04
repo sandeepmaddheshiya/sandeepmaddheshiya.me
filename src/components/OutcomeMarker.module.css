@@ -1,0 +1,10 @@
+.outcome {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.worked { color: var(--outcome-worked); }
+.failed { color: var(--outcome-failed); }
+.inconclusive { color: var(--outcome-inconclusive); }

@@ -1,0 +1,20 @@
+---
+title: "Why Zero-Dependency Utilities Beat Heavy Frameworks for Small Tools"
+slug: "zero-dependency-utilities"
+date: "2026-10-04"
+category: "Engineering"
+summary: "Why keeping small web utilities dependency-free reduces maintenance overhead and preserves speed over years of operation."
+draft: false
+---
+
+## The Problem with Heavy SDKs
+
+When building single-purpose web utilities (like image resizers, format converters, or document checkers), introducing large client-side UI libraries or heavy third-party SDKs introduces:
+
+1. **Bundle Bloat:** Hundreds of kilobytes of JavaScript parsed on mobile connections before the utility is interactive.
+2. **Maintenance Drag:** Upgrading dependencies across minor Node and framework versions often breaks unrelated components.
+3. **Security Surface:** Unnecessary transitive dependencies increase audit surface area.
+
+## The Alternative
+
+Using plain Web APIs (`Canvas`, `ImageData`, `Fetch`, `CSS Variables`) and server-rendered components keeps the footprint minimal, eliminates runtime JavaScript overhead, and ensures the utility works reliably with near-zero ongoing maintenance.

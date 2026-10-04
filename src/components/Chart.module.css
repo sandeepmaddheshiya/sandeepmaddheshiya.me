@@ -1,0 +1,103 @@
+.chartWrapper {
+  margin: var(--space-xl) 0;
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  background: var(--bg-secondary);
+}
+
+.chartTitle {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-md);
+}
+
+.comparisonGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.compRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.metricName {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.diffTag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 0.1em 0.4em;
+  border-radius: var(--border-radius);
+}
+
+.diffTag.positive {
+  color: var(--outcome-worked);
+  background: rgba(47, 125, 94, 0.1);
+}
+
+.diffTag.negative {
+  color: var(--outcome-failed);
+  background: rgba(197, 48, 48, 0.1);
+}
+
+.barGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.barRow {
+  display: grid;
+  grid-template-columns: 50px 1fr 60px;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+}
+
+.barLabel {
+  color: var(--text-tertiary);
+}
+
+.barTrack {
+  height: 8px;
+  background: var(--border-light);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.beforeFill {
+  background: var(--text-tertiary);
+}
+
+.afterFill {
+  background: var(--accent);
+}
+
+.barValue {
+  text-align: right;
+  color: var(--text-secondary);
+}

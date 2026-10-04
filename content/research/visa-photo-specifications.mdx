@@ -1,0 +1,22 @@
+---
+title: "Technical Constraints in Automated Visa Photo Verification"
+slug: "visa-photo-specifications"
+date: "2026-10-04"
+type: "Technical & SEO"
+summary: "Investigating face bounding box tolerances, aspect ratios, and background contrast standards across 40+ national visa portals."
+hoursSpent: 40
+outcome: "Building VisaReadyNow"
+project: "visareadynow"
+---
+
+## Summary of Findings
+
+Automating visa and passport photo compliance requires handling strict government guidelines that vary significantly by country:
+
+- **US / India / China:** 2x2 inch (51x51mm) square photos with head height between 50% and 69% of total image height.
+- **Schengen Area / UK / Canada:** 35x45mm rectangular format with strict off-white / light grey background requirements.
+- **Background Uniformity:** Automated removal requires preserving natural edge feathering around hair while replacing shadows with pure solid RGB values.
+
+## Architectural Decision
+
+Offload background removal and face landmark detection to a Python/FastAPI microservice utilizing OpenCV and lightweight segmentation models, returning processed images directly to Next.js clients.

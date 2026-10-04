@@ -1,0 +1,14 @@
+.status {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.building { color: var(--status-building); }
+.growing { color: var(--status-growing); }
+.shipped { color: var(--status-shipped); }
+.paused { color: var(--status-paused); }
+.failed { color: var(--status-failed); }
+.abandoned { color: var(--status-abandoned); }
+.experiment { color: var(--status-experiment); }
