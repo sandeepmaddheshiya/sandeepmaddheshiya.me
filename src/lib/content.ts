@@ -59,7 +59,10 @@ export function getFeaturedProjects(): (Project & { content: string })[] {
 
 export function getActiveProjects(): (Project & { content: string })[] {
   return getProjects().filter(
-    (p) => p.status === 'building' || p.status === 'growing'
+    (p) =>
+      p.status === 'building' ||
+      p.status === 'growing' ||
+      p.status === 'experiment'
   )
 }
 

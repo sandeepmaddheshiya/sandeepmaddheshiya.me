@@ -32,8 +32,8 @@ export const metrics: MetricItem[] = [
   {
     key: 'organic_clicks',
     label: 'Daily organic clicks',
-    value: 1000,
-    note: '25k+ daily impressions (PhotoResizer)',
+    value: 1100,
+    note: 'PhotoResizer (1k+), MyDocStatus (80–100), VisaReadyNow (20–40)',
     updatedAt: '2026-10-04',
   },
   {

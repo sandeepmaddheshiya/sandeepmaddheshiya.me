@@ -13,7 +13,10 @@ export default function HomePage() {
   const experiments = getExperiments()
   const computed = getComputedMetrics()
   const activeProjects = projects.filter(
-    (p) => p.status === 'building' || p.status === 'growing'
+    (p) =>
+      p.status === 'building' ||
+      p.status === 'growing' ||
+      p.status === 'experiment'
   )
 
   // Merge computed values into global metrics

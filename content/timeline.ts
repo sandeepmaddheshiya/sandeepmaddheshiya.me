@@ -22,6 +22,13 @@ export const timeline: TimelineEvent[] = [
   },
   {
     date: '2026-09',
+    title: 'MyDocStatus reached 80–100 daily clicks & 5k+ impressions',
+    kind: 'milestone',
+    project: 'mydocstatus',
+    note: 'Active on-page SEO experiment tracking official document verification queries; currently preparing for Google AdSense monetization.',
+  },
+  {
+    date: '2026-09',
     title: 'Retired OneStopWrite after SEO/AEO traffic plateau',
     kind: 'fail',
     project: 'onestopwrite',
