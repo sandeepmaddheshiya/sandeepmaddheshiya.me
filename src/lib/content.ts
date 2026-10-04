@@ -40,10 +40,24 @@ function loadContentFiles<T>(
 
 // ── Projects ────────────────────────────────────────────────────
 export function getProjects(): (Project & { content: string })[] {
-  return loadContentFiles('projects', ProjectSchema).map((p) => ({
+  const prioritySlugs = ['pawvalid', 'visareadynow', 'photoresizer']
+  const all = loadContentFiles('projects', ProjectSchema).map((p) => ({
     ...p.data,
     content: p.content,
   }))
+
+  return [
+    ...prioritySlugs
+      .map((slug) => all.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
+    ...all
+      .filter((p) => !prioritySlugs.includes(p.slug))
+      .sort(
+        (a, b) =>
+          new Date(b.updatedAt || b.startedAt).getTime() -
+          new Date(a.updatedAt || a.startedAt).getTime()
+      ),
+  ]
 }
 
 export function getProjectBySlug(
@@ -68,10 +82,12 @@ export function getActiveProjects(): (Project & { content: string })[] {
 
 // ── Experiments ─────────────────────────────────────────────────
 export function getExperiments(): (Experiment & { content: string })[] {
-  return loadContentFiles('experiments', ExperimentSchema).map((e) => ({
-    ...e.data,
-    content: e.content,
-  }))
+  return loadContentFiles('experiments', ExperimentSchema)
+    .map((e) => ({
+      ...e.data,
+      content: e.content,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getExperimentBySlug(
@@ -83,10 +99,12 @@ export function getExperimentBySlug(
 
 // ── Research ────────────────────────────────────────────────────
 export function getResearch(): (Research & { content: string })[] {
-  return loadContentFiles('research', ResearchSchema).map((r) => ({
-    ...r.data,
-    content: r.content,
-  }))
+  return loadContentFiles('research', ResearchSchema)
+    .map((r) => ({
+      ...r.data,
+      content: r.content,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getResearchBySlug(
@@ -104,13 +122,16 @@ export function getWriting(): (Writing & { content: string })[] {
       content: w.content,
     }))
     .filter((w) => !w.draft)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getAllWriting(): (Writing & { content: string })[] {
-  return loadContentFiles('writing', WritingSchema).map((w) => ({
-    ...w.data,
-    content: w.content,
-  }))
+  return loadContentFiles('writing', WritingSchema)
+    .map((w) => ({
+      ...w.data,
+      content: w.content,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 }
 
 export function getWritingBySlug(
@@ -124,12 +145,16 @@ export function getWritingBySlug(
 export function getFailedProjects(): (FailedProject & {
   content: string
 })[] {
-  return loadContentFiles('failed-projects', FailedProjectSchema).map(
-    (fp) => ({
+  return loadContentFiles('failed-projects', FailedProjectSchema)
+    .map((fp) => ({
       ...fp.data,
       content: fp.content,
-    })
-  )
+    }))
+    .sort(
+      (a, b) =>
+        new Date(b.stoppedAt || b.startedAt).getTime() -
+        new Date(a.stoppedAt || a.startedAt).getTime()
+    )
 }
 
 export function getFailedProjectBySlug(
