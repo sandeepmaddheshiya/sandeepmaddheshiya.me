@@ -35,6 +35,13 @@ export const timeline: TimelineEvent[] = [
     note: 'Document generator peaked at 3–8 free users/day against high-authority legal template incumbents; allowed domain to expire.',
   },
   {
+    date: '2026-08',
+    title: 'Published ZyoraAI Interior Design Android app on Google Play',
+    kind: 'launch',
+    project: 'zyoraai',
+    note: 'Purchased a new Google Play Developer Console account and published native Android app; reached 10+ installs.',
+  },
+  {
     date: '2026-08-31',
     title: 'Published visareadynow-passport-specs on npm & PyPI',
     kind: 'launch',
@@ -56,6 +63,13 @@ export const timeline: TimelineEvent[] = [
   },
   {
     date: '2026-06',
+    title: 'Pivoted ZyoraAI into AI Interior Design tool',
+    kind: 'start',
+    project: 'zyoraai',
+    note: 'Repurposed zyoraai.com domain for generative interior room redesigns across web and Android.',
+  },
+  {
+    date: '2026-06',
     title: 'Pivoted OneStopRead into Gemini Flash automated exam portal',
     kind: 'start',
     project: 'onestopread',
@@ -67,6 +81,13 @@ export const timeline: TimelineEvent[] = [
     kind: 'learn',
     project: 'photoresizer',
     note: 'Programmatic pages for government exams (DSSSB) surged in Bing before encountering post-application seasonality drops.',
+  },
+  {
+    date: '2026-05',
+    title: 'Dropped ZyoraAI Resume Builder after market saturation',
+    kind: 'fail',
+    project: 'zyoraai-resume',
+    note: 'Terminated resume builder after 2–4 months of experimentation against high-DA incumbents; zero paid conversions.',
   },
   {
     date: '2026-05',
@@ -112,6 +133,13 @@ export const timeline: TimelineEvent[] = [
   },
   {
     date: '2026-02',
+    title: 'Launched ZyoraAI Resume Builder on zyoraai.com',
+    kind: 'launch',
+    project: 'zyoraai-resume',
+    note: 'Shipped AI resume optimizer, cover letter generator, and 50–80+ templates built with Antigravity, Claude, DeepSeek, and ChatGPT.',
+  },
+  {
+    date: '2026-02',
     title: 'Started research and development of photoresizer.in',
     kind: 'start',
     project: 'photoresizer',
@@ -123,6 +151,13 @@ export const timeline: TimelineEvent[] = [
     kind: 'start',
     project: 'believersart',
     note: 'Began architecture and implementation of custom sketch storefront with headless Strapi CMS and Stripe.',
+  },
+  {
+    date: '2025',
+    title: 'Started working on AI Resume Builder',
+    kind: 'start',
+    project: 'zyoraai-resume',
+    note: 'Began architecting JD-tailored resume optimizer and interview preparation tool in evenings while at Collegedunia.',
   },
   {
     date: '2024',
