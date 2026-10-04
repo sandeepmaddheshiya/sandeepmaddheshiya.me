@@ -30,6 +30,20 @@ export const metrics: MetricItem[] = [
     computed: true,
   },
   {
+    key: 'total_search_clicks',
+    label: 'Total organic clicks',
+    value: 58000,
+    note: '53.7k Bing + 4.6k+ Google (photoresizer.in)',
+    updatedAt: '2026-10-04',
+  },
+  {
+    key: 'total_impressions',
+    label: 'Total search impressions',
+    value: 750000,
+    note: '710.9k Bing + Google (photoresizer.in)',
+    updatedAt: '2026-10-04',
+  },
+  {
     key: 'organic_clicks',
     label: 'Daily organic clicks',
     value: 1100,

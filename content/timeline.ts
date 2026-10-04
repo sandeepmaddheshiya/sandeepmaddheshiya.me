@@ -18,7 +18,7 @@ export const timeline: TimelineEvent[] = [
     title: 'PhotoResizer hit 1k+ daily clicks & 25k+ daily impressions',
     kind: 'milestone',
     project: 'photoresizer',
-    note: 'Google Analytics anomaly alert confirmed organic breakout; achieved Top 5 Google ranking for tool-based photo resizer searches.',
+    note: 'Google Analytics anomaly alert confirmed organic breakout (4.6k+ clicks in days); combined with 53.7k Bing clicks and 710k+ impressions, securing Top 5 Google ranking.',
   },
   {
     date: '2026-09',
