@@ -13,6 +13,13 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   const projects = getProjects()
+  const prioritySlugs = ['pawvalid', 'visareadynow', 'photoresizer']
+  const sortedProjects = [
+    ...prioritySlugs
+      .map((slug) => projects.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
+    ...projects.filter((p) => !prioritySlugs.includes(p.slug)),
+  ]
 
   return (
     <div className="container">
@@ -31,9 +38,9 @@ export default function ProjectsPage() {
           real results.
         </p>
 
-        {projects.length > 0 ? (
+        {sortedProjects.length > 0 ? (
           <div className={styles.list}>
-            {projects.map((project) => (
+            {sortedProjects.map((project) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}

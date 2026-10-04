@@ -12,12 +12,19 @@ export default function HomePage() {
   const projects = getProjects()
   const experiments = getExperiments()
   const computed = getComputedMetrics()
-  const activeProjects = projects.filter(
-    (p) =>
-      p.status === 'building' ||
-      p.status === 'growing' ||
-      p.status === 'experiment'
-  )
+  const prioritySlugs = ['pawvalid', 'visareadynow', 'photoresizer']
+  const activeProjects = [
+    ...prioritySlugs
+      .map((slug) => projects.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
+    ...projects.filter(
+      (p) =>
+        !prioritySlugs.includes(p.slug) &&
+        (p.status === 'building' ||
+          p.status === 'growing' ||
+          p.status === 'experiment')
+    ),
+  ]
 
   // Merge computed values into global metrics
   const mergedMetrics = globalMetrics.map((m) => {

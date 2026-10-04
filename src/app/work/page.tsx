@@ -17,6 +17,14 @@ export default function WorkHubPage() {
   const research = getResearch()
   const failures = getFailedProjects()
 
+  const prioritySlugs = ['pawvalid', 'visareadynow', 'photoresizer']
+  const sortedProjects = [
+    ...prioritySlugs
+      .map((slug) => projects.find((p) => p.slug === slug))
+      .filter((p): p is NonNullable<typeof p> => Boolean(p)),
+    ...projects.filter((p) => !prioritySlugs.includes(p.slug)),
+  ]
+
   return (
     <div className="container">
       <div className={styles.page}>
@@ -94,7 +102,7 @@ export default function WorkHubPage() {
         <div className={styles.activeSection}>
           <h3 className={styles.activeSectionTitle}>Active Projects</h3>
           <div className={styles.activeList}>
-            {projects.map((p) => (
+            {sortedProjects.map((p) => (
               <Link key={p.slug} href={`/projects/${p.slug}`} className={styles.activeRow}>
                 <span className={styles.activeName}>{p.name}</span>
                 <span className={styles.activeMeta}>
