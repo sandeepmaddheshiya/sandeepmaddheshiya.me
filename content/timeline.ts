@@ -21,6 +21,13 @@ export const timeline: TimelineEvent[] = [
     note: 'Google Analytics anomaly alert confirmed organic breakout; achieved Top 5 Google ranking for tool-based photo resizer searches.',
   },
   {
+    date: '2026-09',
+    title: 'Retired OneStopWrite after SEO/AEO traffic plateau',
+    kind: 'fail',
+    project: 'onestopwrite',
+    note: 'Document generator peaked at 3–8 free users/day against high-authority legal template incumbents; allowed domain to expire.',
+  },
+  {
     date: '2026-08',
     title: 'Abandoned OneStopRead after algorithmic traffic collapse',
     kind: 'fail',
@@ -40,6 +47,13 @@ export const timeline: TimelineEvent[] = [
     kind: 'learn',
     project: 'photoresizer',
     note: 'Programmatic pages for government exams (DSSSB) surged in Bing before encountering post-application seasonality drops.',
+  },
+  {
+    date: '2026-05',
+    title: 'Built OneStopWrite policy generator after failed domain flip',
+    kind: 'start',
+    project: 'onestopwrite',
+    note: 'Built free legal document generators (Privacy Policy, Terms, Refund) on onestopwrite.com.',
   },
   {
     date: '2026-04',
