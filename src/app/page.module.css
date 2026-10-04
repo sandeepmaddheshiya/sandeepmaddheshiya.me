@@ -38,26 +38,53 @@
 /* ── Status strip ────────────────────────────────────────────── */
 .statusStrip {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg);
+  flex-direction: column;
+  gap: var(--space-sm);
   padding: var(--space-md) 0;
   border-top: 1px solid var(--border-light);
   border-bottom: 1px solid var(--border-light);
   margin-bottom: var(--space-3xl);
 }
 
+@media (min-width: 768px) {
+  .statusStrip {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-xl);
+  }
+}
+
 .statusItem {
   display: flex;
-  align-items: center;
-  gap: var(--space-sm);
+  align-items: baseline;
+  gap: var(--space-xs) var(--space-sm);
+  flex-wrap: wrap;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--text-tertiary);
+  line-height: 1.5;
 }
 
-.statusItem a {
+.statusLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  white-space: nowrap;
+  flex-shrink: 0;
+  color: var(--text-tertiary);
+}
+
+.statusItem a,
+.statusLink {
   color: var(--accent);
   font-weight: 500;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.statusItem a:hover,
+.statusLink:hover {
+  text-decoration: underline;
 }
 
 .statusArrow {
@@ -328,8 +355,28 @@
 
 /* ── Mobile ──────────────────────────────────────────────────── */
 @media (max-width: 640px) {
-  .experimentEntry {
-    grid-template-columns: 1fr;
+  .page {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .name {
+    font-size: var(--text-2xl);
+  }
+
+  .positioning {
+    font-size: var(--text-base);
+  }
+
+  .projectCard {
+    padding: var(--space-md);
+  }
+
+  .projectCardHeader {
+    flex-direction: column;
+    align-items: flex-start;
     gap: var(--space-xs);
   }
 
@@ -338,8 +385,18 @@
     gap: var(--space-xs);
   }
 
-  .statusStrip {
+  .experimentEntry {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .closingLinks {
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-md);
+  }
+
+  .siteMeta {
     flex-direction: column;
-    gap: var(--space-sm);
+    gap: var(--space-xs);
   }
 }

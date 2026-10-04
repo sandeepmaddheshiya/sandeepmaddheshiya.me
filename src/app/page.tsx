@@ -62,18 +62,22 @@ export default function HomePage() {
       <div className={styles.statusStrip}>
         {activeProjects.length > 0 && (
           <div className={styles.statusItem}>
-            <span>Currently building</span>
-            <span className={styles.statusArrow}>→</span>
-            <Link href={`/projects/${activeProjects[0].slug}`}>
+            <span className={styles.statusLabel}>
+              <span>Currently building</span>
+              <span className={styles.statusArrow}>→</span>
+            </span>
+            <Link href={`/projects/${activeProjects[0].slug}`} className={styles.statusLink}>
               {activeProjects[0].name}
             </Link>
           </div>
         )}
         {experiments.length > 0 && (
           <div className={styles.statusItem}>
-            <span>Latest experiment</span>
-            <span className={styles.statusArrow}>→</span>
-            <Link href={`/experiments/${experiments[0].slug}`}>
+            <span className={styles.statusLabel}>
+              <span>Latest experiment</span>
+              <span className={styles.statusArrow}>→</span>
+            </span>
+            <Link href={`/experiments/${experiments[0].slug}`} className={styles.statusLink}>
               {experiments[0].title}
             </Link>
           </div>

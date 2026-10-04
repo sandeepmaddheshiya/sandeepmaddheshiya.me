@@ -138,3 +138,23 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+@media (max-width: 640px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .timelineContainer {
+    padding-left: var(--space-xs);
+  }
+
+  .eventList {
+    margin-left: 0;
+  }
+
+  .eventMeta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
+  }
+}

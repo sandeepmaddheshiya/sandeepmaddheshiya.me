@@ -48,3 +48,9 @@
   color: var(--text-secondary);
   margin-top: var(--space-xs);
 }
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

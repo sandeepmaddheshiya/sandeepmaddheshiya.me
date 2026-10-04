@@ -116,7 +116,17 @@
 }
 
 @media (max-width: 600px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .activeRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-xs);
   }
 }

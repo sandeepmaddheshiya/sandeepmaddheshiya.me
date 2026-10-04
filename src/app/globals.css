@@ -166,6 +166,12 @@ button:focus-visible {
   padding: 0 var(--space-lg);
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
 .content-width {
   max-width: var(--content-width);
 }
