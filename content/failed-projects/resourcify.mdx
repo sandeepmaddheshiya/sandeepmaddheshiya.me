@@ -1,0 +1,35 @@
+---
+name: Resourcify
+slug: resourcify
+description: "An ad-free Android mobile app providing curated semester exam preparation materials, previous year question papers, and educational notes for college students."
+whyIThoughtItWouldWork: "College students consistently struggle to find organized, reliable semester syllabus notes and previous year question papers. Most existing resources were scattered across disorganized drives or buried behind ad-heavy websites."
+whatIExpected: "Expected steady organic adoption across university cohorts by offering a clean, completely free mobile app with zero ads."
+whatActuallyHappened: "The app achieved organic traction, reaching 1,000+ downloads on the Google Play Store and actively helping students prepare for semester exams."
+whyIStopped: "In 2024, during my final college year, I joined Mobiloitte in Pune as a Software Developer (left after 3 months due to lack of active project allocation) and then joined Collegedunia as a Software Developer. Due to full-time engineering commitments, I was unable to dedicate time to push required Android target SDK and Play Store policy compliance updates. After 3 warning notices from Google Play, the app and developer account were suspended."
+whatILearned: "Mobile apps carry ongoing compliance and maintenance debt. Unlike static web utilities, app stores continuously enforce SDK upgrades and policy revisions. A zero-revenue free utility without automated maintenance or dedicated upkeep will eventually decay under platform policy shifts."
+startedAt: "2023"
+stoppedAt: "2024"
+timeSpent: "6+ months"
+technologies:
+  - Flutter
+  - Dart
+  - SendGrid
+status: "failed"
+---
+
+## Post-Mortem Details
+
+### The Product & Tech Stack
+- **Client App:** Cross-platform mobile client built with **Flutter & Dart** for responsive performance across diverse Android screen sizes.
+- **Communications:** **SendGrid** API integration for automated verification, resource updates, and transactional student notifications.
+- **Content:** Curated repository of semester study materials, subject notes, and previous year exam question papers.
+
+### Key Metrics
+- **Downloads:** 1,000+ organic installs on Google Play Store.
+- **Monetization:** Completely free (₹0 revenue, 0 ads).
+- **Primary Audience:** College students preparing for university semester exams.
+
+### The Breakdown
+1. **Maintenance Overhead:** Google Play regularly raises the minimum target API level requirement for existing apps.
+2. **Time Allocation:** Transitioning into full-time software engineering at Collegedunia left limited bandwidth for unpaid app store compliance updates.
+3. **Platform Dependency:** Depending entirely on a closed app store ecosystem without a web fallback meant that account suspension completely severed user access.

@@ -3,7 +3,7 @@ import styles from './TechEvidenceList.module.css'
 
 type TechItem = {
   name: string
-  projects: { name: string; slug: string }[]
+  projects: { name: string; href: string }[]
   purpose?: string
 }
 
@@ -21,8 +21,8 @@ export function TechEvidenceList({ items }: { items: TechItem[] }) {
             <div className={styles.usedIn}>
               <span className={styles.usedLabel}>Used in: </span>
               {item.projects.map((proj, idx) => (
-                <span key={proj.slug}>
-                  <Link href={`/projects/${proj.slug}`} className={styles.projectLink}>
+                <span key={proj.href + idx}>
+                  <Link href={proj.href} className={styles.projectLink}>
                     {proj.name}
                   </Link>
                   {idx < item.projects.length - 1 && ', '}

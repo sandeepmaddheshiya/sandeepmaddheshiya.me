@@ -171,14 +171,22 @@ export function estimateReadingTime(content: string): number {
 }
 
 // ── Technology Evidence Map ─────────────────────────────────────
-export function getTechEvidenceMap(): Record<string, { name: string; slug: string }[]> {
+export function getTechEvidenceMap(): Record<string, { name: string; href: string }[]> {
   const projects = getProjects()
-  const map: Record<string, { name: string; slug: string }[]> = {}
+  const failedProjects = getFailedProjects()
+  const map: Record<string, { name: string; href: string }[]> = {}
 
   projects.forEach((project) => {
     project.technologies.forEach((tech) => {
       if (!map[tech]) map[tech] = []
-      map[tech].push({ name: project.name, slug: project.slug })
+      map[tech].push({ name: project.name, href: `/projects/${project.slug}` })
+    })
+  })
+
+  failedProjects.forEach((fp) => {
+    fp.technologies?.forEach((tech) => {
+      if (!map[tech]) map[tech] = []
+      map[tech].push({ name: `${fp.name}`, href: `/failed-projects` })
     })
   })
 

@@ -37,6 +37,18 @@ export default function AboutPage() {
         </header>
 
         <section className={styles.section}>
+          <h2 className={styles.sectionHeading}>Background</h2>
+          <div className={styles.prose}>
+            <p>
+              I work as a Software Developer at Collegedunia, building production web systems and backend services. Earlier in 2024, I spent a brief period at Mobiloitte in Pune.
+            </p>
+            <p>
+              My first production mobile product was <Link href="/failed-projects">Resourcify</Link>, an ad-free educational utility for college semester exam preparation that reached 1,000+ organic downloads on the Google Play Store before being retired. Currently, I&apos;m focused on building <Link href="/projects/visareadynow">VisaReadyNow</Link> and documenting experiments in web performance and programmatic SEO.
+            </p>
+          </div>
+        </section>
+
+        <section className={styles.section}>
           <h2 className={styles.sectionHeading}>How I Approach Projects</h2>
           <div className={styles.prose}>
             <p>

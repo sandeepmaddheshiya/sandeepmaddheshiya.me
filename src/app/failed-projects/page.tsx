@@ -51,6 +51,9 @@ export default function FailedProjectsPage() {
                     <span>Started: {f.startedAt}</span>
                     {f.stoppedAt && <span>Stopped: {f.stoppedAt}</span>}
                     {f.timeSpent && <span>Time invested: {f.timeSpent}</span>}
+                    {f.technologies && f.technologies.length > 0 && (
+                      <span>Stack: {f.technologies.join(', ')}</span>
+                    )}
                   </div>
                 </div>
 

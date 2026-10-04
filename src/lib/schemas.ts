@@ -136,6 +136,7 @@ export const FailedProjectSchema = z.object({
   startedAt: z.string(),
   stoppedAt: z.string().optional(),
   timeSpent: z.string().optional(),
+  technologies: z.array(z.string()).default([]),
   status: z.string().default('failed'),
 })
 

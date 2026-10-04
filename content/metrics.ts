@@ -39,13 +39,22 @@ export const metrics: MetricItem[] = [
   {
     key: 'countries_reached',
     label: 'Countries reached',
-    value: null,
+    value: 2,
+    note: 'India, Canada',
+    updatedAt: '2026-10-04',
+  },
+  {
+    key: 'mobile_downloads',
+    label: 'Mobile app downloads',
+    value: 1000,
+    note: '1k+ organic installs (Resourcify)',
     updatedAt: '2026-10-04',
   },
   {
     key: 'revenue',
-    label: 'Revenue generated',
-    value: null,
+    label: 'Contract revenue',
+    value: 500,
+    note: '500 CAD (BelieversArt delivery)',
     updatedAt: '2026-10-04',
   },
 ]

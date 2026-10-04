@@ -1,0 +1,67 @@
+---
+name: "BelieversArt"
+slug: "believersart"
+description: "Full-stack e-commerce platform and headless CMS built for a Canadian client to sell original sketches and artwork with automated Stripe checkout and Resend order notifications."
+status: "shipped"
+category:
+  - E-Commerce
+  - Full-Stack
+startedAt: "2024-02"
+updatedAt: "2024-04"
+technologies:
+  - Next.js
+  - Strapi
+  - Stripe
+  - Resend
+  - TypeScript
+researchHours: 30
+revenue:
+  value: 500
+  currency: "CAD"
+  note: "Client contract delivery payout"
+featured: true
+showMetrics:
+  revenue: true
+  traffic: false
+  users: false
+---
+
+## What is it?
+
+BelieversArt is a custom full-stack e-commerce platform and admin management system built for an art client in Canada. The platform allows art collectors to browse sketch collections, view high-resolution artwork previews, purchase pieces via Stripe, and track orders through a dedicated customer dashboard.
+
+## Why did I build it?
+
+The client needed an independent, customized online storefront for their art brand rather than paying ongoing SaaS subscription fees on generic e-commerce builders. Key requirements included:
+
+1. A clean, focused gallery layout with high-resolution art previews.
+2. Complete autonomy over catalog management, art sizing variants, and pricing without recurring platform fees.
+3. Automated payment workflows and instant transactional order emails.
+
+## The problem
+
+Standard off-the-shelf e-commerce builders imposed recurring monthly fees, transaction commissions, and limited customization for unique sketch variants (dimensions, paper weight, custom framing options), along with poor performance on high-resolution image portfolios.
+
+## Building it
+
+### 1. Storefront & App Architecture
+- Built with **Next.js (App Router)** utilizing Server Components for fast page loads and clean indexing of product catalog pages.
+- Client-side state managed the shopping cart, customer checkout inputs, and live currency calculations.
+
+### 2. Headless Content Management
+- Integrated **Strapi CMS** as the headless backend, providing the artist with a dedicated admin dashboard to publish new sketches, manage inventory stock, and update pricing without modifying code.
+
+### 3. Payment Processing
+- Integrated **Stripe Checkout** with webhook endpoints to handle asynchronous payment confirmations, verify transaction signatures, and update order statuses.
+
+### 4. Transactional Messaging
+- Integrated **Resend** for sending immediate order confirmation receipts to buyers and dispatch notifications to the seller.
+
+## What happened
+
+Delivered across a 2-month development cycle. The store handled real user purchases smoothly with verified Stripe payouts, and the client completed the 500 CAD contract payment.
+
+## What I learned
+
+1. **Webhook Idempotency:** Payment webhooks can be delivered more than once by gateways; designing order creation handlers with strict idempotency keys avoids duplicate order records.
+2. **Headless CMS Workflows:** Decoupling the admin interface (Strapi) from the public storefront (Next.js) gave the client total editorial freedom while keeping the frontend performant.
