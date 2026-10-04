@@ -21,11 +21,32 @@ export const timeline: TimelineEvent[] = [
     note: 'Google Analytics anomaly alert confirmed organic breakout; achieved Top 5 Google ranking for tool-based photo resizer searches.',
   },
   {
+    date: '2026-08',
+    title: 'Abandoned OneStopRead after algorithmic traffic collapse',
+    kind: 'fail',
+    project: 'onestopread',
+    note: 'Automated AI exam portal traffic dropped to 0 after 25 days; recovery attempts with manual verified links failed.',
+  },
+  {
+    date: '2026-06',
+    title: 'Pivoted OneStopRead into Gemini Flash automated exam portal',
+    kind: 'start',
+    project: 'onestopread',
+    note: 'Automated scrapers and Gemini Flash summarization grew to 20–30 daily clicks before search algorithm penalties.',
+  },
+  {
     date: '2026-06',
     title: 'PhotoResizer traffic spiked to 400–600/day on exam queries',
     kind: 'learn',
     project: 'photoresizer',
     note: 'Programmatic pages for government exams (DSSSB) surged in Bing before encountering post-application seasonality drops.',
+  },
+  {
+    date: '2026-04',
+    title: 'Launched onestopread.com as trending blog',
+    kind: 'launch',
+    project: 'onestopread',
+    note: 'General blogging site generated 0–1 clicks/day against established authority publications.',
   },
   {
     date: '2026-02',

@@ -1,0 +1,41 @@
+---
+name: OneStopRead
+slug: onestopread
+description: "A blog website on onestopread.com that was pivoted into an AI-automated government exam alert portal with Gemini Flash summarization and cron-driven scrapers."
+whyIThoughtItWouldWork: "Initially thought publishing articles on trending topics would attract organic search traffic. After that failed to rank against high-DA media sites, I pivoted to government exam notifications—hypothesizing that automated scrapers and Gemini Flash could generate clean, structured exam updates faster than cluttered legacy portal competitors."
+whatIExpected: "Expected automated programmatic exam coverage to rank quickly for low-competition notification keywords and build compounding search impressions."
+whatActuallyHappened: "Phase 1 (trending blog) got 0–1 clicks/day. Phase 2 (AI exam portal) showed promising early traction, growing to 20–30 daily clicks across Google and Bing. However, after 20–25 days, clicks abruptly collapsed to 0 and daily impressions flatlined to 5–20. Manual content rewrites with verified official government links failed to recover search rankings."
+whyIStopped: "The domain suffered an algorithmic content penalty or sandbox de-valuation typical of fresh domains running programmatic AI pipelines. Recovering search visibility without substantial external backlink authority was unsustainable, so I abandoned the project."
+whatILearned: "1. Fresh domains running automated AI generation are heavily scrutinized by search engine spam and unhelpful content classifiers, regardless of UI cleanliness or metadata optimization. 2. Automated aggregation without proprietary primary data or pre-existing domain authority is fragile against search algorithm updates."
+startedAt: "2026-04"
+stoppedAt: "2026-08"
+timeSpent: "4 months"
+technologies:
+  - Next.js
+  - Python
+  - Gemini Flash
+  - Cron
+  - Web Scraping
+status: "failed"
+---
+
+## Post-Mortem Details
+
+### Phase 1: The Trending Blog Trap (April – May 2026)
+- **Domain:** `onestopread.com`
+- **Goal:** Launch a broad editorial and trending blog.
+- **Outcome:** 0–1 clicks per day. Competing directly with entrenched digital publications on trending keywords with a zero-authority domain was ineffective and consumed 2 months of effort.
+
+### Phase 2: The AI & Cron Exam Automation Pivot (June – July 2026)
+- **Concept:** Rebuilt the site into a modern, ad-free alternative to legacy government exam portals (like SarkariExam).
+- **Architecture:**
+  1. Automated scrapers monitored official government recruitment portals for fresh notification PDFs.
+  2. Integrated **Gemini Flash** via backend cron jobs to extract exam dates, eligibility criteria, and fee structures into structured JSON.
+  3. Programmatically generated SEO titles, meta descriptions, and keyword clusters.
+- **Early Signals:** Reached 5–30 daily clicks across Bing and Google within the first 3 weeks.
+
+### Phase 3: The Algorithmic Cliff (August 2026)
+- Around day 25, search engines de-indexed/demoted the programmatic pages.
+- Daily clicks dropped from ~30 to 0; daily search impressions collapsed from hundreds to 5–20.
+- **Mitigation Attempt:** Shifted from purely automated scrapers to manual verification, including official source citations and links to government portals. Rankings did not recover.
+- **Decision:** Dropped the project and redirected engineering focus to utility tools with client-side processing ([PhotoResizer](/projects/photoresizer) and [VisaReadyNow](/projects/visareadynow)).
