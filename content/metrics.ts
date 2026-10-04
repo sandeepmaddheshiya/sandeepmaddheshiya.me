@@ -51,6 +51,20 @@ export const metrics: MetricItem[] = [
     updatedAt: '2026-10-04',
   },
   {
+    key: 'saas_revenue',
+    label: 'Micro-SaaS revenue',
+    value: 350,
+    note: '$350+ USD (VisaReadyNow & PhotoResizer.us)',
+    updatedAt: '2026-10-04',
+  },
+  {
+    key: 'open_source_packages',
+    label: 'Open-source packages',
+    value: 2,
+    note: 'npm & PyPI (visareadynow-passport-specs)',
+    updatedAt: '2026-10-04',
+  },
+  {
     key: 'revenue',
     label: 'Contract revenue',
     value: 500,

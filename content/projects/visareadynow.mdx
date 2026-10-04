@@ -1,62 +1,77 @@
 ---
 name: VisaReadyNow
 slug: visareadynow
-description: "[Add project details]"
-status: building
+description: "An automated visa and passport photo compliance SaaS supporting 190+ countries with automatic background replacement, face proportion verification, and printable templates."
+status: growing
 category:
   - SaaS
   - SEO
   - AI
-startedAt: "2026"
+  - Image Processing
+startedAt: "2026-04"
 updatedAt: "2026-10-04"
+url: "https://visareadynow.com"
 technologies:
   - Next.js
-  - FastAPI
+  - TypeScript
+  - Python
+  - Razorpay
+  - Computer Vision
 researchHours: "40+"
+revenue:
+  value: 250
+  currency: "USD"
+  note: "$250+ generated from direct customer photo purchases"
+traffic:
+  value: 30
+  period: "daily organic clicks"
+  note: "1.5k+ daily impressions (Google & Bing)"
 featured: true
-currentGoal: "[Add current goal]"
+currentGoal: "Scaling country-specific programmatic pages and optimizing photo conversion funnels"
 showMetrics:
-  traffic: false
-  revenue: false
-  users: false
+  traffic: true
+  revenue: true
+  users: true
 ---
 
 ## What is it?
 
-[Add project details]
+**VisaReadyNow** ([visareadynow.com](https://visareadynow.com)) is a global micro-SaaS that automatically transforms casual smartphone selfies into government-compliant passport, visa, and identity photos for over 190 countries. 
+
+It handles automated biometric head measurement (50–69% rule), background removal and replacement (solid white, off-white, light blue), exact aspect ratio cropping, DPI calibration, and generation of 4x6 inch printable photo templates.
 
 ## Why did I build it?
 
-[Add project details]
+The origin came from an accident in early 2026: while attempting to buy `photoresizer.in`, I accidentally purchased `photoresizer.us` without a discount coupon. Looking for ways to utilize the `.us` domain, I researched the US photo market and discovered tools like VisaFoto and PhotoGov.
+
+I spent 4–6 months manually researching, analyzing, and verifying government photo regulations directly from official embassy portals, consular directives, and immigration authorities across 190+ countries (US State Department, Schengen Area, Asian, and African consulates). I launched a US-focused photo prototype on `photoresizer.us`. Within 20 days, it made its first $100+ in sales. Realizing the massive global demand, I built **VisaReadyNow** using this comprehensive, manually verified international specification dataset.
 
 ## The problem
 
-[Add project details]
+1. **High Cost of Traditional Studios:** Pharmacy and studio photo booths charge $15–$25 per pair of passport photos with inconvenient travel.
+2. **Strict Government Rejections:** Visas and passport renewals get delayed for weeks if lighting, head proportions, or background colors deviate even slightly from official guidelines.
+3. **Country Inconsistencies:** US requires 2x2 inches (51x51mm) with white background; UK/Schengen require 35x45mm with cream/light grey background; Malaysia requires light blue backgrounds. Standard generic photo editors don't encode these rules.
 
-## Research
+## Building it & Going Full-Time
 
-[Add project details]
-
-## Building it
-
-[Add project details]
-
-## SEO
-
-[Add project details]
+- **Tech Stack:** Next.js (App Router) for high-performance server-rendered country landing pages, connected to backend Python/OpenCV microservices for facial landmark detection and background segmentation.
+- **Open Source Packages (Released Aug 31, 2026):** Extracted and open-sourced our manually researched and verified country requirements database (190+ countries) as standalone developer packages:
+  - npm: [`visareadynow-passport-specs`](https://www.npmjs.com/package/visareadynow-passport-specs) (TypeScript / JavaScript)
+  - PyPI: [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/) (Python)
+- **Going Full-Time:** In early 2026, I was balancing full-time SDE-1 engineering work at Collegedunia with night/weekend development on VisaReadyNow. When workload at Collegedunia increased, project momentum slowed. On **July 31, 2026**, I left Collegedunia to dedicate 100% of my time to building VisaReadyNow and PhotoResizer.
+- **Conversion Optimization:** Completely overhauled the user interface, preview editor, and one-click export flow after going full-time.
 
 ## What happened
 
-[Add project details]
+- **Revenue:** Generated **$250+ USD** on VisaReadyNow and **$100+ USD** on the early `photoresizer.us` prototype from paying international customers.
+- **Search Traction:** Currently receiving **20–40 daily organic clicks** and **1,500+ daily search impressions** across international immigration search queries.
 
 ## What went wrong
 
-[Add project details]
+- **Payment Gateway Misconfiguration (The April Loss):** On April 4–5, 2026, early users attempted to purchase photos on the US prototype, but transactions failed because international payment acceptance was disabled in Razorpay. After resolving the issue with Razorpay support on April 6, the first successful payment came through.
+- **Part-Time Bandwidth Bottleneck:** Trying to juggle enterprise SDE workload with high-availability micro-SaaS support caused ranking drops in May–June before going full-time in July 2026.
 
 ## What I learned
 
-[Add project details]
-
-## What I'd do differently
-
-[Add project details]
+1. **Real Willingness to Pay:** Users willingly pay $5–$10 for an instant compliance guarantee when applying for critical visas compared to free generic image resizers.
+2. **Payment Gateway Readiness:** Always verify international currency settlement, 3D Secure fallback, and webhooks in sandbox and live mode before sending traffic to checkout flows.

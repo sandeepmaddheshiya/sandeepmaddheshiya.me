@@ -40,10 +40,10 @@ export default function AboutPage() {
           <h2 className={styles.sectionHeading}>Background</h2>
           <div className={styles.prose}>
             <p>
-              I work as a Software Developer at Collegedunia, building production web systems and backend services. Earlier in 2024, I spent a brief period at Mobiloitte in Pune.
+              I worked as a Software Developer (SDE-1) at Collegedunia building production web systems and backend services, after a brief period at Mobiloitte in Pune. On July 31, 2026, I left full-time employment to dedicate 100% of my time to building independent micro-SaaS and internet products.
             </p>
             <p>
-              My first production mobile product was <Link href="/failed-projects">Resourcify</Link>, an ad-free educational utility for college semester exam preparation that reached 1,000+ organic downloads on the Google Play Store before being retired. Currently, I&apos;m focused on building <Link href="/projects/visareadynow">VisaReadyNow</Link> and documenting experiments in web performance and programmatic SEO.
+              My early products included <Link href="/failed-projects">Resourcify</Link> (1,000+ mobile downloads) and the custom art e-commerce platform <Link href="/projects/believersart">BelieversArt</Link>. Currently, I operate <Link href="/projects/photoresizer">PhotoResizer</Link> (1,000+ daily organic clicks) and <Link href="/projects/visareadynow">VisaReadyNow</Link> ($250+ micro-SaaS revenue).
             </p>
           </div>
         </section>

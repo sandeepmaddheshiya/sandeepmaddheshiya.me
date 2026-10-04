@@ -1,22 +1,30 @@
 ---
-title: "Technical Constraints in Automated Visa Photo Verification"
+title: "Technical Constraints & Biometric Rules Across 190+ National Visa Portals"
 slug: "visa-photo-specifications"
-date: "2026-10-04"
-type: "Technical & SEO"
-summary: "Investigating face bounding box tolerances, aspect ratios, and background contrast standards across 40+ national visa portals."
+date: "2026-04-10"
+type: "Technical & Regulatory"
+summary: "In-depth manual investigation and verification of facial biometric bounding boxes, millimeter-to-pixel aspect ratios, and background RGB standards across 190+ countries directly from official consular sources."
 hoursSpent: 40
-outcome: "Building VisaReadyNow"
+outcome: "Built VisaReadyNow & Open-Sourced Spec Libraries"
 project: "visareadynow"
 ---
 
 ## Summary of Findings
 
-Automating visa and passport photo compliance requires handling strict government guidelines that vary significantly by country:
+Automating visa and passport photo compliance requires handling strict government regulations that vary significantly across 190+ jurisdictions. Every single specification across all 190+ countries was manually researched, cross-referenced, and verified directly from official government embassy portals, consular directives, and immigration guidelines by me:
 
 - **US / India / China:** 2x2 inch (51x51mm) square photos with head height between 50% and 69% of total image height.
 - **Schengen Area / UK / Canada:** 35x45mm rectangular format with strict off-white / light grey background requirements.
 - **Background Uniformity:** Automated removal requires preserving natural edge feathering around hair while replacing shadows with pure solid RGB values.
+- **DPI Metadata Requirements:** Government upload portals validate 300 DPI or 600 DPI EXIF headers, rejecting raw uncalibrated exports.
 
-## Architectural Decision
+## Resulting Open Source Packages (Released Aug 31, 2026)
 
-Offload background removal and face landmark detection to a Python/FastAPI microservice utilizing OpenCV and lightweight segmentation models, returning processed images directly to Next.js clients.
+The curated dataset from this manual research—covering exact pixel aspect ratios, millimeters, head height percentage ranges, and official background colors—was formatted into typed data structures and published on August 31, 2026 as open-source developer packages:
+
+- **npm (TypeScript):** [`visareadynow-passport-specs`](https://www.npmjs.com/package/visareadynow-passport-specs)
+- **PyPI (Python):** [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/)
+
+## Implementation in VisaReadyNow
+
+The specification database directly powers the automated facial cropping and background segmentation engine in [VisaReadyNow](/projects/visareadynow).
