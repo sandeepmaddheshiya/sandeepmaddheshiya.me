@@ -11,7 +11,7 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/sandeepmaddheshiya', // Update with real URL
     linkedin: 'https://linkedin.com/in/sandeepmaddheshiya', // Update with real URL
-    email: 'hello@sandeepmaddheshiya.me', // Update with real email
+    email: 'iam.sandeep.maddheshiya@gmail.com',
   },
   nav: [
     { label: 'Work', href: '/projects' },

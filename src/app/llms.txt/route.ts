@@ -1,6 +1,8 @@
 import { getProjects, getExperiments, getResearch, getWriting } from '@/lib/content'
 import { siteConfig } from '@content/site'
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   const projects = getProjects()
   const experiments = getExperiments()

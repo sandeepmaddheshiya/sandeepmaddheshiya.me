@@ -1,6 +1,8 @@
 import { getWriting, getExperiments } from '@/lib/content'
 import { siteConfig } from '@content/site'
 
+export const dynamic = 'force-static'
+
 export async function GET() {
   const writing = getWriting()
   const experiments = getExperiments()

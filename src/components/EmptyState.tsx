@@ -15,11 +15,6 @@ export function EmptyState({
     <div className={styles.empty}>
       <p className={styles.title}>{title}</p>
       {description && <p className={styles.description}>{description}</p>}
-      {isDev && devNote && (
-        <p className={styles.devNote}>
-          <span className={styles.devBadge}>DEV</span> {devNote}
-        </p>
-      )}
     </div>
   )
 }

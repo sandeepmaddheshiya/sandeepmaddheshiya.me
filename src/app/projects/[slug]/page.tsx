@@ -161,12 +161,6 @@ export default async function ProjectCaseStudyPage({
                 </div>
               </section>
             )}
-
-            {isDev && (
-              <div className={styles.devNote}>
-                <strong>DEV NOTE:</strong> Sections with <code>[Add project details]</code> are placeholders. Update <code>content/projects/{project.slug}.mdx</code> with real details.
-              </div>
-            )}
           </article>
 
           {/* Sticky Meta Sidebar */}
