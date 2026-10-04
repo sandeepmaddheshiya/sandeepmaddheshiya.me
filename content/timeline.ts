@@ -62,6 +62,13 @@ export const timeline: TimelineEvent[] = [
     note: 'Transitioned from full-time software engineering at Collegedunia to focus 100% on building VisaReadyNow, PhotoResizer, and micro-SaaS products.',
   },
   {
+    date: '2026-07',
+    title: 'Launched Prepinity educational search experiment',
+    kind: 'start',
+    project: 'prepinity',
+    note: 'Built prepinity.com to test international educational search traffic and explore display ad monetization models.',
+  },
+  {
     date: '2026-06',
     title: 'Pivoted ZyoraAI into AI Interior Design tool',
     kind: 'start',
