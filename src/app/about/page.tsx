@@ -49,6 +49,59 @@ export default function AboutPage() {
         </section>
 
         <section className={styles.section}>
+          <h2 className={styles.sectionHeading}>Engineering Experience</h2>
+          <div className={styles.experienceList}>
+            {/* 1. Indie Developer */}
+            <div className={styles.experienceCard}>
+              <div className={styles.expHeader}>
+                <div>
+                  <h3 className={styles.expRole}>Indie Developer / Builder</h3>
+                  <span className={styles.expCompany}>Independent · Full-time</span>
+                </div>
+                <span className={styles.expPeriod}>Jul 2026 – Present</span>
+              </div>
+              <p className={styles.expDesc}>
+                Designing, building, and operating independent micro-SaaS utilities, programmatic SEO platforms, and computer vision tools (<Link href="/projects/visareadynow">VisaReadyNow</Link>, <Link href="/projects/photoresizer">PhotoResizer</Link>, <Link href="/projects/pawvalid">PawValid</Link>, <Link href="/projects/mydocstatus">MyDocStatus</Link>).
+              </p>
+            </div>
+
+            {/* 2. Collegedunia */}
+            <div className={styles.experienceCard}>
+              <div className={styles.expHeader}>
+                <div>
+                  <h3 className={styles.expRole}>Software Development Engineer I (SDE-1)</h3>
+                  <span className={styles.expCompany}>Collegedunia · Full-time (Gurugram)</span>
+                </div>
+                <span className={styles.expPeriod}>Sep 2024 – Jul 2026</span>
+              </div>
+              <p className={styles.expDesc}>
+                Full-stack developer engineering 4 core production enterprise systems using Laravel (PHP), MySQL, Livewire, and third-party APIs:
+              </p>
+              <ul className={styles.expBullets}>
+                <li><strong>PreppIAS Evaluation Platform:</strong> Automated scanned answer sheet workflows and evaluator distribution, speeding up academic evaluation turnarounds by 3–5 days with real-time dashboards.</li>
+                <li><strong>CRM (Customer Relationship Management):</strong> Built lead tracking and pipeline management (~45% conversion tracking improvement) and integrated WhatsApp Cloud API for automated notifications.</li>
+                <li><strong>HRMS (Human Resource Management System):</strong> Developed employee onboarding, attendance, and leave management modules, cutting manual HR work by 70% and saving 25+ hours/month.</li>
+                <li><strong>ATS (Applicant Tracking System):</strong> Customized candidate pipeline tracking and interview coordination features, reducing hiring pipeline delays by 25%.</li>
+              </ul>
+            </div>
+
+            {/* 3. Mobiloitte */}
+            <div className={styles.experienceCard}>
+              <div className={styles.expHeader}>
+                <div>
+                  <h3 className={styles.expRole}>Software Developer Apprentice</h3>
+                  <span className={styles.expCompany}>Mobiloitte · Apprenticeship (Pune)</span>
+                </div>
+                <span className={styles.expPeriod}>Jan 2024 – Jul 2024</span>
+              </div>
+              <p className={styles.expDesc}>
+                Full-stack development training on Node.js, Express, React, MongoDB, user authentication, and payment gateway integrations.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.section}>
           <h2 className={styles.sectionHeading}>How I Approach Projects</h2>
           <div className={styles.prose}>
             <p>

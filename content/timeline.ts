@@ -174,10 +174,10 @@ export const timeline: TimelineEvent[] = [
     note: 'Began architecting JD-tailored resume optimizer and interview preparation tool in evenings while at Collegedunia.',
   },
   {
-    date: '2024',
-    title: 'Joined Collegedunia as Software Developer',
+    date: '2024-09',
+    title: 'Joined Collegedunia as SDE-1',
     kind: 'milestone',
-    note: 'Full-time software engineering role working on production web applications and backend systems.',
+    note: 'Engineered 4 production enterprise systems in Laravel and MySQL: PreppIAS evaluation platform, CRM with WhatsApp Cloud API, HRMS, and ATS.',
   },
   {
     date: '2024',
@@ -187,10 +187,10 @@ export const timeline: TimelineEvent[] = [
     note: 'App and account suspended after 3 warnings due to inability to push target SDK / policy compliance updates while working full-time.',
   },
   {
-    date: '2024',
-    title: 'Left Mobiloitte after 3 months',
-    kind: 'milestone',
-    note: 'Joined in Pune during final college year; left after 3 months due to lack of active project allocation / being kept on bench.',
+    date: '2024-01',
+    title: 'Joined Mobiloitte as Software Developer Apprentice',
+    kind: 'start',
+    note: 'Hands-on training in Pune on Node.js, Express, MongoDB, and payment gateway architectures.',
   },
   {
     date: '2023',
