@@ -1,0 +1,51 @@
+---
+title: "Engineering a Biometric Photo Compliance Engine for 190+ Countries"
+slug: "building-biometric-compliance-engine"
+date: "2026-09-18"
+category: "Computer Vision & Architecture"
+summary: "Technical breakdown of converting disparate embassy guidelines, millimeter-to-pixel ratios, DPI metadata, and RGB solid backgrounds into typed code."
+draft: false
+---
+
+## The Regulatory Jungle
+
+Most developers assume a passport photo is simply a "square image with a white background." 
+
+When researching visa and passport compliance for [VisaReadyNow](/projects/visareadynow), I spent 4–6 months manually examining immigration regulations across 190+ countries. The reality is wildly fragmented:
+
+- **United States:** Strict 2x2 inch (51x51mm) square format. The head (from bottom of chin to top of hair) must be between 50% and 69% of the overall image height (1 to 1 3/8 inches). Background must be pure solid white or off-white.
+- **Schengen Area (EU) / UK / Canada:** 35x45mm rectangular format. The head must occupy 70–80% of the vertical frame (32–36mm). The background must be light grey or cream—never pure stark white (which causes edge blending on biometric scanners).
+- **Malaysia:** 35x50mm with a solid light blue background.
+- **DPI Metadata:** File uploads are rejected by consular validation systems if the EXIF DPI header is missing or uncalibrated to 300/600 DPI.
+
+## Extracting the Rules into Open-Source Code
+
+Rather than hardcoding conditional statements throughout our application codebase, I normalized all national requirements into a typed specification schema.
+
+On August 31, 2026, I released this specification database to the community across both ecosystems:
+- **npm (TypeScript):** [`visareadynow-passport-specs`](https://www.npmjs.com/package/visareadynow-passport-specs)
+- **PyPI (Python):** [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/)
+
+```typescript
+export interface CountryPassportSpec {
+  countryCode: string;
+  countryName: string;
+  widthMm: number;
+  heightMm: number;
+  minHeadHeightPercent: number;
+  maxHeadHeightPercent: number;
+  backgroundColor: 'white' | 'light-grey' | 'light-blue' | 'off-white';
+  recommendedDpi: number;
+  printableGrid: {
+    sheetSize: '4x6' | 'A4';
+    photosPerSheet: number;
+  };
+}
+```
+
+## The Facial Landmark Pipeline
+
+1. **Detection & Bounding Box:** Detect face bounding coordinates, chin base, and top-of-skull landmarks.
+2. **Dynamic Scaling:** Calculate the required crop bounds such that `(chin - topOfHead) / totalHeight` falls strictly within the target country's statutory percentage range.
+3. **Background Replacement:** Apply semantic segmentation to separate hair, ears, and shoulders, blending edges onto the country's exact RGB specification.
+4. **Printable Sheet Assembly:** Automatically arrange 4 or 6 copies on a 4x6 inch canvas with precise cut lines for pharmacy printing booths.

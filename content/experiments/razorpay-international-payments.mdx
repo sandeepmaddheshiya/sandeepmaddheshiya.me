@@ -1,0 +1,42 @@
+---
+title: "Resolving Cross-Border Checkout Failures on Micro-SaaS Platforms"
+slug: "razorpay-international-payments"
+date: "2026-04-06"
+project: "photoresizer"
+tags:
+  - payments
+  - micro-saas
+  - checkout
+  - cro
+hypothesis: "Enabling automated international card acceptance, multi-currency display, and fallback 3D Secure verification in Razorpay will stop foreign card transaction declines."
+change: "Diagnosed failed transaction logs from April 4–5 on the US prototype, activated international card acceptance and foreign currency settlement via Razorpay support, and added informative client checkout error states."
+expected: "Eliminate payment failure rates for US and international visitors attempting passport photo exports."
+actual: "Successful payment conversion jumped from 0% (multiple card failures on April 4–5) to 100% on April 6, securing the first paying customer and scaling past $100 within 20 days."
+conclusion: "Cross-border payment readiness (specifically foreign card settlement, 3D Secure routing, and webhook confirmation) must be verified with live international transactions before driving organic or paid traffic to checkout funnels."
+outcome: "worked"
+data:
+  - label: "Payment Success Rate"
+    before: 0
+    after: 95
+    unit: "%"
+  - label: "First 20-Day Revenue"
+    before: 0
+    after: 100
+    unit: "USD"
+---
+
+## Background & Rationale
+
+After accidentally purchasing `photoresizer.us` in early 2026, I built a prototype US passport and visa photo resizer. Traffic began arriving from US immigration queries, and on April 4–5, users clicked "Download & Pay". However, every single payment attempt threw an unhandled gateway error.
+
+## Investigation & Root Cause
+
+1. **Gateway Restriction:** By default, domestic Razorpay merchant accounts reject foreign-issued credit and debit cards unless international acceptance is explicitly approved and enabled with KYC compliance.
+2. **Currency Settlement:** Charging US dollars without active multi-currency settlement caused US banking institutions to flag transactions as unrecognized domestic charges.
+3. **Lack of User Feedback:** When an international card failed, the frontend displayed a generic error rather than suggesting alternate payment routes.
+
+## The Fix & Result
+
+- Submitted cross-border export documentation to Razorpay on April 5 and obtained international payment approval on April 6.
+- Added live webhook handlers to verify transaction status before rendering high-resolution printable 4x6 inch templates.
+- **Result:** Within hours of enabling the fix, the first live $5 transaction completed successfully on April 6, 2026.

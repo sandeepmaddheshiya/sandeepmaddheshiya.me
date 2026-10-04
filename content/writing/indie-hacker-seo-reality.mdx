@@ -1,0 +1,43 @@
+---
+title: "Search Engines Do Not Care About Your Features: Lessons from Building 6 Micro-Tools"
+slug: "indie-hacker-seo-reality"
+date: "2026-10-02"
+category: "SEO & Distribution"
+summary: "Why building 50+ templates and advanced AI features failed on ZyoraAI, while a single-purpose Canvas photo resizer hit 1,000+ daily organic clicks."
+draft: false
+---
+
+## The Feature Trap
+
+As software engineers, our default instinct when a project fails to gain traction is to add more features.
+
+When I started building the [ZyoraAI Resume Builder](/failed-projects/zyoraai-resume) in early 2025, I believed that if I built:
+- 50–80+ structured resume templates,
+- 8–10 MNC-tailored formats,
+- An automated Job Description (JD) keyword matcher,
+- Contextual AI cover letter generation, and
+- Practice interview question generators,
+
+users would naturally flock to the platform. 
+
+It took 5 months of development and 4 months of live experimentation on `zyoraai.com` to learn the truth: **Search engines and consumers do not care about feature density in saturated categories.**
+
+## The Distribution Asymmetry
+
+The AI resume space was already dominated by venture-backed platforms with massive backlink profiles and high domain ratings. A brand-new domain attempting to rank for keywords like `ai resume builder` or `resume optimizer` faced an insurmountable domain authority wall.
+
+Meanwhile, in February 2026, I launched [PhotoResizer](/projects/photoresizer) on `photoresizer.in`. It had virtually zero complex AI wrappers—just a fast, client-side Canvas utility that solved one urgent problem: resizing photos for government exams and portal uploads.
+
+By September 2026:
+- `photoresizer.in` reached **1,000+ daily organic clicks** and **25,000+ daily impressions**, achieving Top 5 Google rankings.
+- `zyoraai.com` resume builder sat at near-zero organic traffic before being repurposed.
+
+## Why Micro-Utilities Beat Feature-Heavy Portals
+
+1. **High Query Urgency:** Users searching for `DSSSB photo size converter` or `passport photo 2x2 inches` need an immediate, interactive utility. They do not want a complex account creation flow.
+2. **Instant Core Web Vitals:** A zero-dependency client-side utility loads in under 300ms, signaling strong user satisfaction metrics to search crawlers.
+3. **Narrow Long-Tail Niche:** Niche technical tools face lower search competition compared to broad software categories.
+
+## The Rule for Future Builds
+
+Before writing a single line of code, ask: *What is the exact search intent of the user, and why would a search engine rank this domain over an existing competitor?* If the only differentiator is "more features," rethink the distribution model first.

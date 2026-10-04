@@ -69,3 +69,14 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+@media (max-width: 640px) {
+  .page {
+    padding: var(--space-xl) 0;
+  }
+
+  .metaRow {
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+}

@@ -1,0 +1,41 @@
+---
+title: "Browser HTML5 Canvas vs. Server-Side Python for High-Volume Image Processing"
+slug: "client-canvas-vs-server-resizing"
+date: "2026-03-10"
+project: "photoresizer"
+tags:
+  - performance
+  - canvas
+  - architecture
+  - image-processing
+hypothesis: "Moving bulk image compression, aspect ratio cropping, and EXIF orientation to client-side HTML5 Canvas will eliminate server compute costs while reducing user export latencies."
+change: "Replaced a Python/FastAPI Pillow resizing microservice with browser-native Canvas 2D context processing and Web Workers."
+expected: "Zero server compute bills at 1,000+ daily active users and instant local processing without file upload roundtrips."
+actual: "Monthly cloud server compute bills dropped to $0 with static CDN delivery. Image processing latency dropped from 1,200ms (upload + process + download) to 42ms for 4K images on desktop."
+conclusion: "For deterministic image processing tasks, browser-native Web APIs scale infinitely at zero infrastructure cost while guaranteeing complete user privacy."
+outcome: "worked"
+data:
+  - label: "Export Latency (4K Image)"
+    before: 1200
+    after: 42
+    unit: "ms"
+  - label: "Monthly Compute Bill"
+    before: 25
+    after: 0
+    unit: "USD"
+---
+
+## Technical Motivation
+
+When building `photoresizer.in`, the initial prototype uploaded user photos to a cloud server running Python and Pillow to perform bilinear interpolation and file compression. 
+
+As traffic grew to hundreds of visitors per day, this architecture presented two major drawbacks:
+1. **Infrastructure Costs:** Every additional user consumed server CPU and memory for image decoding.
+2. **Network Latency & Privacy:** Uploading large 10MB–20MB raw smartphone photos over mobile connections caused 1–3 second processing delays and raised user privacy concerns.
+
+## Implementation Details
+
+1. **Client-Side Decoding:** Used `createImageBitmap` and `HTMLCanvasElement` to load and render raw images directly in the browser.
+2. **EXIF Normalization:** Implemented binary EXIF orientation header parsing to correct rotated smartphone portrait selfies automatically before drawing onto the canvas context.
+3. **Downsampling Pipeline:** Applied step-down bi-cubic sampling to avoid aliasing artifacts when downscaling 12MP photos to specific 300x300 or 600x600 exam dimensions.
+4. **Local Export:** Rendered final output via `canvas.toBlob('image/jpeg', quality)` directly to an ephemeral object URL for instant download.

@@ -1,0 +1,46 @@
+---
+title: "Impact of Purely Automated LLM Content Generation on Fresh Domain Indexation"
+slug: "ai-content-search-penalties"
+date: "2026-08-10"
+project: "onestopread"
+tags:
+  - seo
+  - ai
+  - content
+  - failure
+hypothesis: "Scraping official government recruitment portals and formatting exam notifications using Gemini Flash will provide clean, search-friendly pages that rank quickly."
+change: "Built cron-driven scrapers coupled with Gemini Flash structured JSON extraction to publish exam updates, syllabus breakdowns, and dates on onestopread.com."
+expected: "Sustain 100+ daily clicks and grow organic search impressions steadily over 90 days."
+actual: "Traffic surged to 20–30 daily clicks across Google and Bing during weeks 1–3, but abruptly collapsed to 0 around day 25 as search engine unhelpful content filters demoted the automated pages."
+conclusion: "Automated programmatic LLM summarization on low-authority domains triggers aggressive search quality penalties. Sustainable SEO requires proprietary data, unique tooling, or strong pre-existing domain authority."
+outcome: "failed"
+data:
+  - label: "Daily Clicks (Peak to Cliff)"
+    before: 30
+    after: 0
+    unit: "clicks/day"
+  - label: "Daily Impressions"
+    before: 800
+    after: 15
+    unit: "impressions/day"
+---
+
+## Hypothesis & Architecture
+
+Legacy government exam portals in India are cluttered with aggressive ads and broken links. I hypothesized that building a clean, automated portal (`onestopread.com`) using:
+1. Python scrapers for official government notification PDFs,
+2. Gemini Flash for structured date/fee/eligibility summarization,
+3. Programmatic Next.js static pages with structured schema,
+
+would rapidly capture search engine share for long-tail notification queries.
+
+## What Actually Happened
+
+- **The Early Spike (Days 1–20):** Search engine bots crawled the clean sitemaps quickly. Daily clicks climbed from 2 to 30 per day, and daily impressions rose past 800.
+- **The Algorithmic Cliff (Days 21–28):** Around day 25, search engines updated their indexing signals. Daily impressions flatlined to under 20, and clicks dropped to 0.
+- **Attempted Recovery:** Replaced automated copy with hand-edited summaries, added direct primary source links to official government websites, and audited metadata. The domain remained in algorithmic penalty status.
+
+## Key Learnings
+
+1. Search algorithms flag repetitive syntax patterns and high publication volume on zero-authority domains.
+2. Building standalone utility tools (like [PhotoResizer](/projects/photoresizer)) generates compounding organic traffic because interactive tools provide genuine utility that generic content aggregators cannot replicate.
