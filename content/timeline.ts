@@ -22,6 +22,13 @@ export const timeline: TimelineEvent[] = [
   },
   {
     date: '2026-09',
+    title: 'Started building PawValid pet compliance tool',
+    kind: 'start',
+    project: 'pawvalid',
+    note: 'Initiated pawvalid.online to automate international pet health certificate timelines and travel requirements; experimenting with SEO and UI/UX.',
+  },
+  {
+    date: '2026-09',
     title: 'MyDocStatus reached 80–100 daily clicks & 5k+ impressions',
     kind: 'milestone',
     project: 'mydocstatus',
