@@ -14,6 +14,27 @@ export const timeline: TimelineEvent[] = [
     note: 'First version of the living builder journal. Built from scratch with Next.js and plain CSS.',
   },
   {
+    date: '2026-09-25',
+    title: 'PhotoResizer hit 1k+ daily clicks & 25k+ daily impressions',
+    kind: 'milestone',
+    project: 'photoresizer',
+    note: 'Google Analytics anomaly alert confirmed organic breakout; achieved Top 5 Google ranking for tool-based photo resizer searches.',
+  },
+  {
+    date: '2026-06',
+    title: 'PhotoResizer traffic spiked to 400–600/day on exam queries',
+    kind: 'learn',
+    project: 'photoresizer',
+    note: 'Programmatic pages for government exams (DSSSB) surged in Bing before encountering post-application seasonality drops.',
+  },
+  {
+    date: '2026-02',
+    title: 'Started research and development of photoresizer.in',
+    kind: 'start',
+    project: 'photoresizer',
+    note: 'Initiated keyword investigation and built privacy-focused client-side image resizing utility using Web Canvas API.',
+  },
+  {
     date: '2026',
     title: 'Started building VisaReadyNow',
     kind: 'start',

@@ -56,7 +56,7 @@ export function ComparisonChart({
                     </div>
                     <span className={styles.barValue}>
                       {item.before}
-                      {item.unit || ''}
+                      {item.unit ? ` ${item.unit}` : ''}
                     </span>
                   </div>
                 )}
@@ -72,7 +72,7 @@ export function ComparisonChart({
                     </div>
                     <span className={styles.barValue}>
                       {item.after}
-                      {item.unit || ''}
+                      {item.unit ? ` ${item.unit}` : ''}
                     </span>
                   </div>
                 )}
