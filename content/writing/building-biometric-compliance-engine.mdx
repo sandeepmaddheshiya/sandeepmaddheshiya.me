@@ -1,9 +1,10 @@
 ---
-title: "Engineering a Biometric Photo Compliance Engine for 190+ Countries"
+title: "Engineering a Biometric Photo Compliance Engine for 204 Countries"
 slug: "building-biometric-compliance-engine"
 date: "2026-09-18"
+updated: "2026-10-07"
 category: "Computer Vision & Architecture"
-summary: "Technical breakdown of converting disparate embassy guidelines, millimeter-to-pixel ratios, DPI metadata, and RGB solid backgrounds into typed code."
+summary: "Technical breakdown of converting disparate embassy guidelines, millimeter-to-pixel ratios, DPI metadata, and RGB solid backgrounds into typed code across all 204 countries."
 draft: false
 ---
 
@@ -11,7 +12,7 @@ draft: false
 
 Most developers assume a passport photo is simply a "square image with a white background." 
 
-When researching visa and passport compliance for [VisaReadyNow](/projects/visareadynow), I spent 4–6 months manually examining immigration regulations across 190+ countries. The reality is wildly fragmented:
+When researching visa and passport compliance for [VisaReadyNow](/projects/visareadynow), I manually examined and verified immigration regulations across all **204 countries** directly from primary consular directives and ICAO standards. The reality is wildly fragmented:
 
 - **United States:** Strict 2x2 inch (51x51mm) square format. The head (from bottom of chin to top of hair) must be between 50% and 69% of the overall image height (1 to 1 3/8 inches). Background must be pure solid white or off-white.
 - **Schengen Area (EU) / UK / Canada:** 35x45mm rectangular format. The head must occupy 70–80% of the vertical frame (32–36mm). The background must be light grey or cream—never pure stark white (which causes edge blending on biometric scanners).
@@ -20,9 +21,8 @@ When researching visa and passport compliance for [VisaReadyNow](/projects/visar
 
 ## Extracting the Rules into Open-Source Code
 
-Rather than hardcoding conditional statements throughout our application codebase, I normalized all national requirements into a typed specification schema.
-
-On August 31, 2026, I released this specification database to the community across both ecosystems:
+Rather than hardcoding conditional statements throughout our application codebase, I normalized all national requirements into a typed specification schema and benchmark dataset:
+- **ICAO Dataset:** [`icao-passport-photo-dataset`](https://github.com/sandeepmaddheshiya/icao-passport-photo-dataset)
 - **npm (TypeScript):** [`visareadynow-passport-specs`](https://www.npmjs.com/package/visareadynow-passport-specs)
 - **PyPI (Python):** [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/)
 

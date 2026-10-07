@@ -1,30 +1,33 @@
 ---
-title: "Technical Constraints & Biometric Rules Across 190+ National Visa Portals"
+title: "Technical Constraints & Biometric Rules Across All 204 National Visa Portals"
 slug: "visa-photo-specifications"
-date: "2026-04-10"
+date: "2026-10-07"
 type: "Technical & Regulatory"
-summary: "In-depth manual investigation and verification of facial biometric bounding boxes, millimeter-to-pixel aspect ratios, and background RGB standards across 190+ countries directly from official consular sources."
-hoursSpent: 40
-outcome: "Built VisaReadyNow & Open-Sourced Spec Libraries"
+summary: "In-depth manual investigation and verification of facial biometric bounding boxes, millimeter-to-pixel aspect ratios, background RGB standards, and official sources across 204 countries directly from consular directives and ICAO standards."
+hoursSpent: 100
+outcome: "Verified 204 countries with official sources, open-sourced ICAO dataset & PyPI spec packages, and deployed v1.0 engine to production"
 project: "visareadynow"
 ---
 
 ## Summary of Findings
 
-Automating visa and passport photo compliance requires handling strict government regulations that vary significantly across 190+ jurisdictions. Every single specification across all 190+ countries was manually researched, cross-referenced, and verified directly from official government embassy portals, consular directives, and immigration guidelines by me:
+Automating visa and passport photo compliance requires handling strict government regulations that vary significantly across all 204 international jurisdictions. Every single specification across all 204 countries was manually researched, cross-referenced, and verified directly from official government embassy portals, consular directives, and immigration guidelines across two major research phases (April 2026 and an intensive 60+ hour sprint in October 2026):
 
-- **US / India / China:** 2x2 inch (51x51mm) square photos with head height between 50% and 69% of total image height.
-- **Schengen Area / UK / Canada:** 35x45mm rectangular format with strict off-white / light grey background requirements.
-- **Background Uniformity:** Automated removal requires preserving natural edge feathering around hair while replacing shadows with pure solid RGB values.
-- **DPI Metadata Requirements:** Government upload portals validate 300 DPI or 600 DPI EXIF headers, rejecting raw uncalibrated exports.
+- **US / India / China / Colombia:** 2x2 inch (51x51mm) square photos with head height strictly between 50% and 69% of total image height.
+- **Schengen Area / UK / Canada / Australia:** 35x45mm rectangular format with strict off-white / light grey background requirements (cream for UK) and 70–80% face coverage.
+- **Malaysia & Specialized Consulates:** 35x50mm with solid light blue background.
+- **Background Uniformity & Lighting:** Automated segmentation requires preserving natural edge feathering around hair while eliminating harsh shadows and replacing backgrounds with exact target RGB hex codes.
+- **DPI & EXIF Metadata Standards:** Official upload portals reject uncalibrated uploads if EXIF density headers deviate from required 300 DPI or 600 DPI standards.
+- **Official Government Links:** All 204 country profiles now include verified direct links to the official government authority documentation.
 
-## Resulting Open Source Packages (Released Aug 31, 2026)
+## Open Source Benchmark Dataset & Spec Packages
 
-The curated dataset from this manual research—covering exact pixel aspect ratios, millimeters, head height percentage ranges, and official background colors—was formatted into typed data structures and published on August 31, 2026 as open-source developer packages:
+The curated dataset from this manual research—covering exact pixel aspect ratios, millimeters, head height percentage ranges, official background colors, and official government URLs—is open-sourced for developers and researchers:
 
+- **ICAO Benchmark Dataset (GitHub):** [`sandeepmaddheshiya/icao-passport-photo-dataset`](https://github.com/sandeepmaddheshiya/icao-passport-photo-dataset)
+- **PyPI (Python):** [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/) (Updated October 2026)
 - **npm (TypeScript):** [`visareadynow-passport-specs`](https://www.npmjs.com/package/visareadynow-passport-specs)
-- **PyPI (Python):** [`visareadynow-passport-specs`](https://pypi.org/project/visareadynow-passport-specs/)
 
-## Implementation in VisaReadyNow
+## Core Engine Training & Production Deployment
 
-The specification database directly powers the automated facial cropping and background segmentation engine in [VisaReadyNow](/projects/visareadynow).
+Using the ICAO dataset and verified 204-country rule matrix, the backend Python/OpenCV biometric engine was calibrated and tested against 400+ document configurations. The enhanced compliance engine is now live in production on [VisaReadyNow](/projects/visareadynow).

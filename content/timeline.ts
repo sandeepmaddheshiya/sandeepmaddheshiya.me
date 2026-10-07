@@ -8,6 +8,13 @@ export type TimelineEvent = {
 
 export const timeline: TimelineEvent[] = [
   {
+    date: '2026-10-07',
+    title: 'VisaReadyNow 204-Country Overhaul & Live Production Release',
+    kind: 'milestone',
+    project: 'visareadynow',
+    note: 'Completed a 3-day 60+ hour sprint (Oct 5–7) manually verifying photo rules across all 204 countries with official consular sources. Released ICAO Passport Photo Dataset on GitHub, updated PyPI specs, trained core CV/AI backend engine, and deployed live to production.',
+  },
+  {
     date: '2026-10-04',
     title: 'Launched sandeepmaddheshiya.me',
     kind: 'launch',

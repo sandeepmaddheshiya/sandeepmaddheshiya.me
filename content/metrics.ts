@@ -73,10 +73,10 @@ export const metrics: MetricItem[] = [
   },
   {
     key: 'open_source_packages',
-    label: 'Open-source packages',
-    value: 2,
-    note: 'npm & PyPI (visareadynow-passport-specs)',
-    updatedAt: '2026-10-04',
+    label: 'Open-source packages & datasets',
+    value: 3,
+    note: 'npm & PyPI (visareadynow-passport-specs) + ICAO Dataset (GitHub)',
+    updatedAt: '2026-10-07',
   },
   {
     key: 'revenue',
